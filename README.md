@@ -41,6 +41,7 @@ classDiagram
     Element <|.. Team
     Element <|.. Player
     Element <|.. Coach
+    Element <|.. Physiotherapist
     Player <|-- Goalkeeper
     Player <|-- Defender
     Player <|-- Forward
@@ -51,16 +52,17 @@ classDiagram
     Visitor~R~ <|.. RatingStatsVisitor
     Visitor~R~ <|.. TopPlayersVisitor
     Visitor~R~ <|.. JsonExportVisitor
+    Visitor~R~ <|.. AverageSalaryVisitor
 ```
 
 ## Trade-off proof
 
 ### New visitor
 
-Pending final commit.
+Commit `Add AverageSalaryVisitor` changed only `src/main/java/visitor/AverageSalaryVisitor.java`. No element class changed. Adding a new operation costs one new visitor class with a method for each existing element type.
 
 ### New element type
 
-Pending final commit.
+Commit `Add Physiotherapist element` changed `src/main/java/model/Physiotherapist.java`, `src/main/java/visitor/Visitor.java`, `src/main/java/visitor/SalaryVisitor.java`, `src/main/java/visitor/RatingStatsVisitor.java`, `src/main/java/visitor/TopPlayersVisitor.java`, `src/main/java/visitor/JsonExportVisitor.java`, `src/main/java/visitor/AverageSalaryVisitor.java`, `src/test/java/LiveSportsTest.java`, and `README.md`. Adding an element costs a new class plus a new method in the Visitor interface and every visitor implementation. The tests and README verify and record that cost.
 
 ## AI Log

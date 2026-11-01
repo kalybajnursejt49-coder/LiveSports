@@ -14,5 +14,6 @@ public class TopPlayersVisitor implements Visitor<List<Player>> {
     public List<Player> visit(Defender player) { return add(player); }
     public List<Player> visit(Forward player) { return add(player); }
     public List<Player> visit(Coach coach) { return players; }
+    public List<Player> visit(Physiotherapist staff) { return players; }
     public List<Player> getPlayers() { return List.copyOf(players); }
 }

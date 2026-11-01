@@ -39,6 +39,7 @@ public class JsonExportVisitor implements Visitor<String> {
     public String visit(Defender player) { return player("defender", player); }
     public String visit(Forward player) { return player("forward", player); }
     public String visit(Coach coach) { comma(); json.append("{\"type\":\"coach\",\"name\":").append(quote(coach.getName())).append(",\"salary\":").append(coach.getSalary()).append('}'); return json.toString(); }
+    public String visit(Physiotherapist staff) { comma(); json.append("{\"type\":\"physiotherapist\",\"name\":").append(quote(staff.getName())).append(",\"salary\":").append(staff.getSalary()).append('}'); return json.toString(); }
     public void end(League league) { endContainer(); }
     public void end(Club club) { endContainer(); }
     public void end(Team team) { endContainer(); }

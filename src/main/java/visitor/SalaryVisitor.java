@@ -9,5 +9,6 @@ public class SalaryVisitor implements Visitor<Double> {
     public Double visit(Defender player) { total += player.getSalary(); return total; }
     public Double visit(Forward player) { total += player.getSalary(); return total; }
     public Double visit(Coach coach) { total += coach.getSalary(); return total; }
+    public Double visit(Physiotherapist staff) { total += staff.getSalary(); return total; }
     public double getTotal() { return total; }
 }

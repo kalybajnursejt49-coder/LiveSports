@@ -8,6 +8,7 @@ public interface Visitor<R> {
     R visit(Defender defender);
     R visit(Forward forward);
     R visit(Coach coach);
+    R visit(Physiotherapist physiotherapist);
     default void end(League league) { }
     default void end(Club club) { }
     default void end(Team team) { }

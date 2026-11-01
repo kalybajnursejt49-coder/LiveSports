@@ -11,5 +11,6 @@ public class AverageSalaryVisitor implements Visitor<Double> {
     public Double visit(Defender player) { add(player.getSalary()); return getAverage(); }
     public Double visit(Forward player) { add(player.getSalary()); return getAverage(); }
     public Double visit(Coach coach) { add(coach.getSalary()); return getAverage(); }
+    public Double visit(Physiotherapist staff) { add(staff.getSalary()); return getAverage(); }
     public double getAverage() { return count == 0 ? 0 : sum / count; }
 }

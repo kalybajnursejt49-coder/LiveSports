@@ -15,6 +15,7 @@ public class RatingStatsVisitor implements Visitor<Integer> {
     public Integer visit(Defender player) { add(player); return count; }
     public Integer visit(Forward player) { add(player); return count; }
     public Integer visit(Coach coach) { return count; }
+    public Integer visit(Physiotherapist staff) { return count; }
     public int getCount() { return count; }
     public int getSum() { return sum; }
     public double getAverage() { return count == 0 ? 0 : (double) sum / count; }
