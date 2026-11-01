@@ -1,0 +1,2 @@
+package event;
+public enum EventType { GOAL, YELLOW_CARD, RED_CARD, SUBSTITUTION, MATCH_END, PLAYER_POINTS, SQUAD_REPORT }
